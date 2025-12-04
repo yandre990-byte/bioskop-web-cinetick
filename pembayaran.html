@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pembayaran Tiket • CineTick</title>
+    <link rel="stylesheet" href="css/pembayaran.css">
+</head>
+<body>
+<main class="wrapper">
+    <h1>Pembayaran Tiket</h1>
+
+    <div class="box">
+        <h2>Detail Pembelian</h2>
+        <p><strong>Film:</strong> Midnight City</p>
+        <p><strong>Tanggal:</strong> 5 Desember 2025</p>
+        <p><strong>Jam:</strong> 19:00</p>
+        <p><strong>Kursi:</strong> A5, A6</p>
+        <p><strong>Total Bayar:</strong> Rp 90.000</p>
+    </div>
+
+    <form class="box" onsubmit="return lakukanPembayaran(event)">
+        <h2>Metode Pembayaran</h2>
+
+        <label>
+            <input type="radio" name="metode" value="qris"> QRIS
+        </label>
+        <label>
+            <input type="radio" name="metode" value="transfer"> Transfer Bank
+        </label>
+        <label>
+            <input type="radio" name="metode" value="cash"> Bayar di Loket
+        </label>
+
+        <button type="submit" class="btn">Bayar Sekarang</button>
+    </form>
+
+    <p class="ket">*Pembayaran hanya simulasi, tidak terhubung sistem asli.</p>
+</main>
+
+<script>
+    function lakukanPembayaran(e) {
+        e.preventDefault();
+
+        // Simulasi random berhasil / gagal (biar keliatan hidup)
+        const chance = Math.random();
+
+        if (chance > 0.3) {
+            window.location.href = "pembayaran-berhasil.html";
+        } else {
+            window.location.href = "pembayaran-gagal.html";
+        }
+    }
+</script>
+</body>
+</html>

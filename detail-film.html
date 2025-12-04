@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineTick • Pemesanan Tiket</title>
+    <link rel="stylesheet" href="css/detail-film.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">CineTick</div>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="daftar-film.html">Daftar Film</a>
+        <a href="detail-film.html" class="active">Pesan Tiket</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<main class="booking-layout">
+
+    <!-- PANEL KIRI: PILIH FILM & JADWAL -->
+    <section class="panel film-panel">
+        <h1>Pemesanan Tiket</h1>
+        <p class="desc">
+            Pilih film, tanggal, jam tayang, lalu klik kursi yang kamu mau.
+            E-ticket di samping akan terisi otomatis.
+        </p>
+
+        <form class="form-pesan" onsubmit="return false">
+            <label>
+                Pilih Film
+                <select id="film">
+                    <option value="Now You See Me" data-price="50000">Now You See Me – Rp50.000</option>
+                    <option value="Ancika 1995" data-price="40000">Ancika 1995 – Rp40.000</option>
+                    <option value="Open BO: I Am Campus" data-price="55000">Open BO: I Am Campus – Rp55.000</option>
+                    <option value="Ambatron & Rusdi" data-price="55000">Ambatron & Rusdi – Rp55.000</option>
+                    <option value="Midsommar" data-price="50000">Midsommar – Rp50.000</option>
+                    <option value="Interstellar" data-price="60000">Interstellar – Rp60.000</option>
+                </select>
+            </label>
+
+            <label>
+                Tanggal Nonton
+                <input type="date" id="tanggal" required>
+            </label>
+
+            <label>
+                Jam Tayang
+                <select id="jam">
+                    <option>16:30</option>
+                    <option>18:45</option>
+                    <option>19:00</option>
+                    <option>20:00</option>
+                    <option>20:30</option>
+                    <option>20:45</option>
+                    <option>21:20</option>
+                </select>
+            </label>
+        </form>
+
+        <div class="legend">
+            <div><span class="dot available"></span> Tersedia</div>
+            <div><span class="dot selected"></span> Dipilih</div>
+            <div><span class="dot occupied"></span> Terisi</div>
+        </div>
+    </section>
+
+    <!-- PANEL TENGAH: PILIH KURSI -->
+    <section class="panel seat-panel">
+        <h2>Pilih Kursi</h2>
+        <p class="screen-label">LAYAR</p>
+
+        <div class="seat-grid">
+            <!-- Baris A -->
+            <button class="seat" data-seat="A1">A1</button>
+            <button class="seat" data-seat="A2">A2</button>
+            <button class="seat occupied" data-seat="A3">A3</button>
+            <button class="seat" data-seat="A4">A4</button>
+            <button class="seat" data-seat="A5">A5</button>
+            <button class="seat" data-seat="A6">A6</button>
+            <button class="seat" data-seat="A7">A7</button>
+            <button class="seat" data-seat="A8">A8</button>
+
+            <!-- Baris B -->
+            <button class="seat" data-seat="B1">B1</button>
+            <button class="seat" data-seat="B2">B2</button>
+            <button class="seat" data-seat="B3">B3</button>
+            <button class="seat occupied" data-seat="B4">B4</button>
+            <button class="seat" data-seat="B5">B5</button>
+            <button class="seat" data-seat="B6">B6</button>
+            <button class="seat" data-seat="B7">B7</button>
+            <button class="seat" data-seat="B8">B8</button>
+
+            <!-- Baris C -->
+            <button class="seat" data-seat="C1">C1</button>
+            <button class="seat" data-seat="C2">C2</button>
+            <button class="seat" data-seat="C3">C3</button>
+            <button class="seat" data-seat="C4">C4</button>
+            <button class="seat" data-seat="C5">C5</button>
+            <button class="seat occupied" data-seat="C6">C6</button>
+            <button class="seat" data-seat="C7">C7</button>
+            <button class="seat" data-seat="C8">C8</button>
+
+            <!-- Baris D -->
+            <button class="seat" data-seat="D1">D1</button>
+            <button class="seat" data-seat="D2">D2</button>
+            <button class="seat" data-seat="D3">D3</button>
+            <button class="seat" data-seat="D4">D4</button>
+            <button class="seat" data-seat="D5">D5</button>
+            <button class="seat" data-seat="D6">D6</button>
+            <button class="seat" data-seat="D7">D7</button>
+            <button class="seat" data-seat="D8">D8</button>
+
+            <!-- Baris E -->
+            <button class="seat" data-seat="E1">E1</button>
+            <button class="seat" data-seat="E2">E2</button>
+            <button class="seat" data-seat="E3">E3</button>
+            <button class="seat" data-seat="E4">E4</button>
+            <button class="seat" data-seat="E5">E5</button>
+            <button class="seat" data-seat="E6">E6</button>
+            <button class="seat" data-seat="E7">E7</button>
+            <button class="seat" data-seat="E8">E8</button>
+        </div>
+    </section>
+
+    <!-- PANEL KANAN: TIKET ONLINE -->
+    <section class="panel ticket-panel">
+        <h2>Tiket Online</h2>
+
+        <div class="eticket">
+            <div class="eticket-header">
+                <span class="brand">CineTick</span>
+                <span class="tag">E-Ticket</span>
+            </div>
+
+            <div class="eticket-body">
+                <p><span class="label">Film</span><span id="t-film">-</span></p>
+                <p><span class="label">Tanggal</span><span id="t-tanggal">-</span></p>
+                <p><span class="label">Jam</span><span id="t-jam">-</span></p>
+                <p><span class="label">Kursi</span><span id="t-kursi">Belum dipilih</span></p>
+                <p><span class="label">Jumlah</span><span id="t-jumlah">0</span></p>
+                <p><span class="label">Total</span><span id="t-total">Rp0</span></p>
+            </div>
+
+            <div class="barcode"></div>
+            <p class="note">Tunjukkan e-ticket ini di kasir atau gate masuk.</p>
+        </div>
+
+        <button class="btn-bayar" onclick="lanjutPembayaran()">Lanjut ke Pembayaran</button>
+    </section>
+
+</main>
+
+<script>
+    const filmSelect = document.getElementById("film");
+    const tanggalInput = document.getElementById("tanggal");
+    const jamSelect = document.getElementById("jam");
+    const seatButtons = document.querySelectorAll(".seat");
+
+    const tFilm = document.getElementById("t-film");
+    const tTanggal = document.getElementById("t-tanggal");
+    const tJam = document.getElementById("t-jam");
+    const tKursi = document.getElementById("t-kursi");
+    const tJumlah = document.getElementById("t-jumlah");
+    const tTotal = document.getElementById("t-total");
+
+    let selectedSeats = [];
+
+    function formatRupiah(angka) {
+        return new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: "IDR",
+            maximumFractionDigits: 0
+        }).format(angka);
+    }
+
+    function updateTicket() {
+        const filmText = filmSelect.value;
+        const price = Number(filmSelect.selectedOptions[0].dataset.price || 0);
+        const tanggalVal = tanggalInput.value;
+        const jamVal = jamSelect.value;
+        const jumlah = selectedSeats.length;
+        const total = price * jumlah;
+
+        tFilm.textContent = filmText || "-";
+        tJam.textContent = jamVal || "-";
+
+        if (tanggalVal) {
+            const t = new Date(tanggalVal);
+            const opt = { day: "2-digit", month: "2-digit", year: "numeric" };
+            tTanggal.textContent = t.toLocaleDateString("id-ID", opt);
+        } else {
+            tTanggal.textContent = "-";
+        }
+
+        tKursi.textContent = jumlah > 0 ? selectedSeats.join(", ") : "Belum dipilih";
+        tJumlah.textContent = jumlah;
+        tTotal.textContent = total > 0 ? formatRupiah(total) : "Rp0";
+    }
+
+    // Klik kursi
+    seatButtons.forEach(btn => {
+        if (btn.classList.contains("occupied")) return;
+
+        btn.addEventListener("click", () => {
+            const seatCode = btn.dataset.seat;
+
+            if (btn.classList.contains("selected")) {
+                btn.classList.remove("selected");
+                selectedSeats = selectedSeats.filter(s => s !== seatCode);
+            } else {
+                btn.classList.add("selected");
+                selectedSeats.push(seatCode);
+            }
+
+            updateTicket();
+        });
+    });
+
+    filmSelect.addEventListener("change", updateTicket);
+    tanggalInput.addEventListener("change", updateTicket);
+    jamSelect.addEventListener("change", updateTicket);
+
+    function lanjutPembayaran() {
+        if (selectedSeats.length === 0) {
+            alert("Pilih minimal satu kursi dulu ya.");
+            return;
+        }
+        // Di tugas ini cukup redirect simulasi
+        window.location.href = "pembayaran.html";
+    }
+
+    // Set default tanggal hari ini
+    window.addEventListener("DOMContentLoaded", () => {
+        const today = new Date().toISOString().split("T")[0];
+        tanggalInput.value = today;
+        updateTicket();
+    });
+</script>
+
+</body>
+</html>

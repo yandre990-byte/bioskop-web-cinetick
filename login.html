@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>CineTick • Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <main class="login-page">
+        <section class="login-card">
+            <div class="login-left">
+                <h1>CineTick</h1>
+                <p>
+                    Masuk dulu, baru pilih film.  
+                    Kursi terbaik nggak nunggu kamu terlalu lama.
+                </p>
+                <ul>
+                    <li>Pesan tiket tanpa antri</li>
+                    <li>Lihat jadwal & studio</li>
+                    <li>Simpan riwayat nontonmu</li>
+                </ul>
+            </div>
+
+            <div class="login-right">
+                <h2>Login</h2>
+                <p class="hint">Gunakan akun demo apa saja, ini cuma simulasi.</p>
+
+                <form class="form-login" onsubmit="return handleLogin(event)">
+                    <label>
+                        Username / Email
+                        <input type="text" id="username" placeholder="misal: ridwan_01">
+                    </label>
+
+                    <label>
+                        Password
+                        <input type="password" id="password" placeholder="••••••••">
+                    </label>
+
+                    <div class="row">
+                        <label class="remember">
+                            <input type="checkbox" id="remember">
+                            <span>Ingat saya</span>
+                        </label>
+
+                        <a href="#" class="forgot">Lupa password?</a>
+                    </div>
+
+                    <p id="error" class="error"></p>
+
+                    <button type="submit" class="btn-login">Masuk</button>
+                    <p class="register-text">
+                        Belum punya akun? <span>Daftar langsung di loket bioskop.</span>
+                    </p>
+                </form>
+
+                <a href="index.html" class="skip-link">Lewati login • Lihat beranda</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // JS simple buat bonus poin + biar form kerasa hidup
+        function handleLogin(e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorEl  = document.getElementById("error");
+
+            if (!username || !password) {
+                errorEl.textContent = "Username dan password wajib diisi dulu ya.";
+                return false;
+            }
+
+            // simulasi login sukses
+            errorEl.textContent = "";
+            // bisa diarahkan ke index.html
+            window.location.href = "index.html";
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    color: #f9fafb;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #181818;
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.navbar a {
+    color: #e5e7eb;
+    margin-left: 14px;
+    text-decoration: none;
+}
+
+.navbar a.active,
+.navbar a:hover {
+    color: #a5b4fc;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.btn-login {
+    padding: 6px 14px;
+    border: 1px solid #4f46e5;
+    border-radius: 999px;
+}
+
+/* HERO */
+.hero {
+    height: 60vh;
+    background: linear-gradient(to bottom right, #1e1b4b, #0f0f0f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    color: #cbd5e1;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    font-size: 1rem;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: #6366f1;
+    padding: 10px 20px;
+    border-radius: 999px;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: #4f46e5;
+}
+
+.btn-secondary {
+    border: 1px solid #6366f1;
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #6366f1;
+}
+
+.btn-secondary:hover {
+    background: #1e1b4b;
+}
+
+/* HIGHLIGHT */
+.highlight {
+    padding: 40px 32px;
+}
+
+.highlight h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 16px 20px;
+    background: #181818;
+    border-radius: 12px;
+    border: 1px solid #2d2d2d;
+    text-decoration: none;
+    color: #fff;
+    width: 180px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.card:hover {
+    background: #27272a;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 40px;
+    padding: 16px;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.9rem;
+    border-top: 1px solid #2d2d2d;
+}

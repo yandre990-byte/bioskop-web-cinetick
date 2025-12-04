@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Evaluasi • CineTick</title>
+    <link rel="stylesheet" href="css/evaluasi.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">CineTick</div>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="daftar-film.html">Daftar Film</a>
+        <a href="detail-film.html">Pesan Tiket</a>
+        <a href="evaluasi.html" class="active">Evaluasi</a>
+    </nav>
+</header>
+
+<main class="wrapper">
+    <h1>Form Evaluasi</h1>
+    <p class="subtitle">
+        Silakan isi evaluasi terkait proyek website ini.  
+        Feedback akan membantu pengembangan ke depannya.
+    </p>
+
+    <form class="card" onsubmit="return submitEval(event)">
+        <label>
+            Nama Penilai
+            <input type="text" id="nama" required>
+        </label>
+
+        <label>
+            Penilaian Tampilan (1–5)
+            <select id="tampilan">
+                <option value="1">1 - Buruk</option>
+                <option value="2">2 - Kurang</option>
+                <option value="3">3 - Cukup</option>
+                <option value="4">4 - Bagus</option>
+                <option value="5">5 - Sangat Bagus</option>
+            </select>
+        </label>
+
+        <label>
+            Penilaian Fitur (1–5)
+            <select id="fitur">
+                <option value="1">1 - Buruk</option>
+                <option value="2">2 - Kurang</option>
+                <option value="3">3 - Cukup</option>
+                <option value="4">4 - Bagus</option>
+                <option value="5">5 - Sangat Bagus</option>
+            </select>
+        </label>
+
+        <label>
+            Saran / Catatan
+            <textarea id="saran" rows="4" placeholder="Tulis evaluasi di sini..." required></textarea>
+        </label>
+
+        <button type="submit" class="btn">Kirim Evaluasi</button>
+    </form>
+</main>
+
+<script>
+    function submitEval(e) {
+        e.preventDefault();
+        window.location.href = "evaluasi-berhasil.html";
+    }
+</script>
+
+</body>
+</html>

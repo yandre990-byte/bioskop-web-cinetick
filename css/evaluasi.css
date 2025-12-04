@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    color: #f9fafb;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 32px;
+    background: #181818;
+    position: sticky;
+    top: 0;
+}
+
+.navbar a {
+    margin-left: 14px;
+    color: #e5e7eb;
+    text-decoration: none;
+}
+
+.navbar a.active,
+.navbar a:hover {
+    color: #a5b4fc;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.wrapper {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+h1 {
+    font-size: 1.7rem;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #181818;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #2d2d2d;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+label {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+input, select, textarea {
+    background: #0f0f0f;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #2d2d2d;
+    color: white;
+    font-size: 0.9rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #6366f1;
+    outline: none;
+}
+
+.btn {
+    padding: 10px;
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #4f46e5;
+}

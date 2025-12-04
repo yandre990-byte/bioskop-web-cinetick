@@ -1,0 +1,141 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1d2448 0, #050816 40%, #020617 100%);
+    color: #f9fafb;
+    padding-bottom: 60px;
+}
+
+/* NAVBAR SAMA TEMA LOGIN */
+.navbar {
+    padding: 16px 36px;
+    background: rgba(15,23,42,0.96);
+    border-bottom: 1px solid rgba(148,163,184,0.25);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.06em;
+}
+
+.navbar a {
+    margin-left: 18px;
+    text-decoration: none;
+    color: #e5e7eb;
+    font-size: 0.95rem;
+    transition: 0.2s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #a5b4fc;
+}
+
+/* TITLE PAGE */
+.page {
+    max-width: 1150px;
+    margin: 28px auto;
+    padding: 0 24px;
+}
+
+.page h1 {
+    font-size: 2rem;
+    margin-bottom: 4px;
+    letter-spacing: .03em;
+}
+
+.subtitle {
+    font-size: .9rem;
+    color: #cdd0f5;
+    margin-bottom: 22px;
+}
+
+/* GRID FILM */
+.grid-film {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 22px;
+}
+
+/* CARD FILM */
+.card-film {
+    text-decoration: none;
+    color: #f9fafb;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    background: rgba(15,23,42,0.8);
+    border: 1px solid rgba(148,163,184,0.3);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.55);
+    transform: translateY(0);
+    transition: 0.25s ease;
+}
+
+.card-film:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.6);
+    border-color: #6366f1;
+}
+
+/* THUMB / GAMBAR */
+.thumb {
+    width: 100%;
+    aspect-ratio: 2/3;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+}
+
+/* OVERLAY SAAT HOVER */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.05));
+    padding: 16px;
+    opacity: 0;
+    transition: 0.25s ease;
+}
+
+.card-film:hover .overlay {
+    opacity: 1;
+    backdrop-filter: blur(2px);
+}
+
+/* TEXT DI OVERLAY */
+.overlay h2 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.info {
+    font-size: .8rem;
+    color: #c3c8ff;
+    margin-bottom: 6px;
+}
+
+.sinopsis {
+    font-size: .78rem;
+    color: #e5e7eb;
+    line-height: 1.35;
+}
+
+/* RESPONSIVE */
+@media (max-width: 650px) {
+    .grid-film {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
