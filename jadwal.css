@@ -1,0 +1,154 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1d2448 0, #050816 40%, #020617 100%);
+    color: #f9fafb;
+    padding-bottom: 40px;
+}
+
+/* NAVBAR */
+.navbar {
+    padding: 14px 32px;
+    background: rgba(15,23,42,0.96);
+    border-bottom: 1px solid rgba(148,163,184,0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: .06em;
+}
+
+.navbar a {
+    margin-left: 16px;
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: .9rem;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #a5b4fc;
+}
+
+.btn-login {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #6366f1;
+}
+
+/* PAGE */
+.page {
+    max-width: 1100px;
+    margin: 28px auto;
+    padding: 0 24px;
+}
+
+.page h1 {
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    font-size: .9rem;
+    color: #cbd5f5;
+    margin-bottom: 18px;
+}
+
+/* FILTER BAR */
+.filter-bar {
+    margin-bottom: 16px;
+}
+
+.filter-bar label {
+    font-size: .9rem;
+    color: #e5e7eb;
+}
+
+.filter-bar select {
+    margin-left: 8px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #1f2937;
+    background: #020617;
+    color: #f9fafb;
+    font-size: .88rem;
+}
+
+/* TABEL JADWAL */
+.jadwal-wrap {
+    background: rgba(15,23,42,0.96);
+    border-radius: 16px;
+    border: 1px solid rgba(148,163,184,0.25);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    overflow: hidden;
+}
+
+.tabel-jadwal {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9rem;
+}
+
+.tabel-jadwal thead {
+    background: #111827;
+}
+
+.tabel-jadwal th,
+.tabel-jadwal td {
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.tabel-jadwal th {
+    font-weight: 600;
+    color: #e5e7eb;
+    border-bottom: 1px solid #1f2937;
+}
+
+.tabel-jadwal tbody tr:nth-child(even) {
+    background: #020617;
+}
+
+.tabel-jadwal tbody tr:nth-child(odd) {
+    background: #020617c2;
+}
+
+.tabel-jadwal tbody tr:hover {
+    background: #111827;
+}
+
+.highlight {
+    background: #1e293b !important;
+    box-shadow: inset 0 0 0 1px rgba(129,140,248,0.8);
+}
+
+/* NOTE */
+.note {
+    margin-top: 14px;
+    font-size: .8rem;
+    color: #d1d5db;
+}
+
+/* RESPONSIVE */
+@media (max-width: 720px) {
+    .page {
+        padding: 0 16px;
+    }
+
+    .tabel-jadwal th,
+    .tabel-jadwal td {
+        padding: 8px 8px;
+        font-size: .8rem;
+    }
+}
