@@ -3,20 +3,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-/* BACKGROUND SAMA SEPERTI LOGIN */
 body {
     min-height: 100vh;
     background: radial-gradient(circle at top, #1d2448 0, #050816 40%, #020617 100%);
     color: #f9fafb;
-    padding: 24px 0;
+    padding: 24px 0 40px;
 }
 
-/* NAVBAR – DISAMA-IN TEMA LOGIN */
+/* NAVBAR */
 .navbar {
-    padding: 14px 36px;
+    padding: 14px 32px;
     background: rgba(15,23,42,0.96);
     border-bottom: 1px solid rgba(148,163,184,0.25);
     display: flex;
@@ -27,14 +26,14 @@ body {
 .logo {
     font-weight: 700;
     font-size: 1.2rem;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
 }
 
 .navbar a {
     margin-left: 16px;
-    text-decoration: none;
     color: #e5e7eb;
-    font-size: 0.9rem;
+    text-decoration: none;
+    font-size: .9rem;
     transition: 0.2s ease;
 }
 
@@ -43,17 +42,33 @@ body {
     color: #a5b4fc;
 }
 
-/* LAYOUT UTAMA */
+/* PAGE ANIM */
+.page-anim {
+    animation: fadePage 0.7s ease-out;
+}
+
+@keyframes fadePage {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* LAYOUT */
 .booking-layout {
     max-width: 1200px;
-    margin: 26px auto 40px;
+    margin: 26px auto 0;
     padding: 0 24px;
     display: grid;
     grid-template-columns: 1.2fr 1.4fr 1fr;
     gap: 22px;
 }
 
-/* PANEL GENERIC – MIRIP KARTU LOGIN */
+/* PANEL GENERIC */
 .panel {
     background: rgba(15,23,42,0.96);
     border-radius: 18px;
@@ -62,7 +77,7 @@ body {
     padding: 18px 18px 20px;
 }
 
-/* PANEL KIRI: INFO FILM & FORM */
+/* PANEL KIRI */
 .film-panel h1 {
     font-size: 1.6rem;
     margin-bottom: 6px;
@@ -106,7 +121,7 @@ body {
     box-shadow: 0 0 0 1px rgba(99,102,241,0.4);
 }
 
-/* LEGEND KURSI */
+/* LEGEND */
 .legend {
     margin-top: 12px;
     display: flex;
@@ -169,6 +184,7 @@ body {
     border-color: #6366f1;
     color: #fff;
     box-shadow: 0 10px 18px rgba(79,70,229,0.5);
+    animation: popSeat 0.18s ease-out;
 }
 
 .seat.occupied {
@@ -178,7 +194,7 @@ body {
     cursor: not-allowed;
 }
 
-/* PANEL KANAN: TIKET ONLINE */
+/* PANEL KANAN: TIKET */
 .ticket-panel h2 {
     font-size: 1.1rem;
     margin-bottom: 8px;
@@ -243,7 +259,7 @@ body {
     margin-top: 8px;
 }
 
-/* BUTTON BAYAR – SAMA VIBE-NYA DENGAN BTN LOGIN */
+/* BUTTON BAYAR */
 .btn-bayar {
     width: 100%;
     margin-top: 14px;
@@ -255,11 +271,30 @@ body {
     font-size: 0.95rem;
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
+    animation: pulseGlow 1.8s ease-in-out infinite alternate;
 }
 
 .btn-bayar:hover {
     transform: translateY(-1px);
     box-shadow: 0 10px 20px rgba(79,70,229,0.45);
+}
+
+/* ANIMASI KURSI & TOMBOL */
+@keyframes popSeat {
+    0%   { transform: scale(0.9); }
+    60%  { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulseGlow {
+    from {
+        box-shadow: 0 0 0 rgba(99,102,241,0.0);
+        transform: translateY(0);
+    }
+    to {
+        box-shadow: 0 0 18px rgba(99,102,241,0.55);
+        transform: translateY(-1px);
+    }
 }
 
 /* RESPONSIVE */
