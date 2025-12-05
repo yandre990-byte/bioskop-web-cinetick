@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineTick • Jadwal Tayang</title>
+    <link rel="stylesheet" href="css/jadwal.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">CineTick</div>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="daftar-film.html">Daftar Film</a>
+        <a href="jadwal.html" class="active">Jadwal</a>
+        <a href="detail-film.html">Pesan Tiket</a>
+        <a href="login.html" class="btn-login">Login</a>
+    </nav>
+</header>
+
+<main class="page">
+    <h1>Jadwal Tayang Hari Ini</h1>
+    <p class="subtitle">
+        Pilih film di bawah, jadwalnya akan disorot otomatis.  
+        Ini juga sekalian demo JavaScript biar tugas kamu dapet poin +.
+    </p>
+
+    <section class="filter-bar">
+        <label>
+            Pilih Film
+            <select id="filterFilm">
+                <option value="all">Semua</option>
+                <option value="Now You See Me">Now You See Me</option>
+                <option value="Ancika 1995">Ancika 1995</option>
+                <option value="Open BO: I Am Campus">Open BO: I Am Campus</option>
+                <option value="Ambatron & Rusdi">Ambatron & Rusdi</option>
+                <option value="Midsommar">Midsommar</option>
+                <option value="Interstellar">Interstellar</option>
+            </select>
+        </label>
+    </section>
+
+    <section class="jadwal-wrap">
+        <table class="tabel-jadwal">
+            <thead>
+                <tr>
+                    <th>Film</th>
+                    <th>Studio</th>
+                    <th>Jam</th>
+                    <th>Harga</th>
+                    <th>Keterangan</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyJadwal">
+                <tr data-film="Now You See Me">
+                    <td>Now You See Me</td>
+                    <td>Studio 4</td>
+                    <td>20.30</td>
+                    <td>Rp50.000</td>
+                    <td>Show malam, ramai penonton</td>
+                </tr>
+                <tr data-film="Ancika 1995">
+                    <td>Ancika 1995</td>
+                    <td>Studio 1</td>
+                    <td>19.00</td>
+                    <td>Rp40.000</td>
+                    <td>Cocok nonton bareng doi</td>
+                </tr>
+                <tr data-film="Open BO: I Am Campus">
+                    <td>Open BO: I Am Campus</td>
+                    <td>Studio 3</td>
+                    <td>21.20</td>
+                    <td>Rp55.000</td>
+                    <td>21+ only</td>
+                </tr>
+                <tr data-film="Ambatron & Rusdi">
+                    <td>Ambatron & Rusdi</td>
+                    <td>Studio 6</td>
+                    <td>20.00</td>
+                    <td>Rp55.000</td>
+                    <td>Sci-Fi + komedi absurd</td>
+                </tr>
+                <tr data-film="Midsommar">
+                    <td>Midsommar</td>
+                    <td>Studio 5</td>
+                    <td>18.45</td>
+                    <td>Rp50.000</td>
+                    <td>Horror psikologis</td>
+                </tr>
+                <tr data-film="Interstellar">
+                    <td>Interstellar</td>
+                    <td>Studio 2</td>
+                    <td>20.45</td>
+                    <td>Rp60.000</td>
+                    <td>Wajib buat pecinta sci-fi</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="note">
+        <p>
+            Jadwal di atas hanya simulasi untuk tugas akhir.  
+            Untuk pemesanan kursi & tiket silakan gunakan menu <b>Pesan Tiket</b>.
+        </p>
+    </section>
+</main>
+
+<script>
+    // JavaScript simple buat filter jadwal berdasarkan film
+    const filterFilm = document.getElementById('filterFilm');
+    const rows = document.querySelectorAll('#tbodyJadwal tr');
+
+    filterFilm.addEventListener('change', () => {
+        const val = filterFilm.value;
+
+        rows.forEach(row => {
+            const film = row.dataset.film;
+            // reset highlight
+            row.classList.remove('highlight');
+
+            if (val === 'all' || film === val) {
+                row.style.display = '';
+                if (val !== 'all' && film === val) {
+                    row.classList.add('highlight');
+                }
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
