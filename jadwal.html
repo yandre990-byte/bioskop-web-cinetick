@@ -107,30 +107,8 @@
     </section>
 </main>
 
-<script>
-    // JavaScript simple buat filter jadwal berdasarkan film
-    const filterFilm = document.getElementById('filterFilm');
-    const rows = document.querySelectorAll('#tbodyJadwal tr');
-
-    filterFilm.addEventListener('change', () => {
-        const val = filterFilm.value;
-
-        rows.forEach(row => {
-            const film = row.dataset.film;
-            // reset highlight
-            row.classList.remove('highlight');
-
-            if (val === 'all' || film === val) {
-                row.style.display = '';
-                if (val !== 'all' && film === val) {
-                    row.classList.add('highlight');
-                }
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    });
-</script>
+<!-- CUMA INI SCRIPT-NYA -->
+<script src="js/jadwal.js"></script>
 
 </body>
 </html>
