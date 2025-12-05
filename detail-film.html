@@ -2,140 +2,110 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineTick • Pemesanan Tiket</title>
-    <link rel="stylesheet" href="css/detail-film.css">
+    <title>CineTick • Daftar Film</title>
+    <link rel="stylesheet" href="css/daftar-film.css">
 </head>
 <body>
-
 <header class="navbar">
     <div class="logo">CineTick</div>
     <nav>
         <a href="index.html">Beranda</a>
-        <a href="daftar-film.html">Daftar Film</a>
-        <a href="detail-film.html" class="active">Pesan Tiket</a>
-        <a href="login.html">Login</a>
+        <a href="daftar-film.html" class="active">Daftar Film</a>
+        <a href="detail-film.html">Pesan Tiket</a>
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="evaluasi.html">Evaluasi</a>
+        <a href="jadwal.html">Jadwal</a>
     </nav>
 </header>
 
-<main class="booking-layout">
+<main class="page page-anim">
+    <h1>Daftar Film</h1>
+    <p class="subtitle">
+        Arahkan kursor ke poster untuk melihat judul dan sinopsis singkat.  
+        Klik kartu film untuk masuk ke halaman detail film.
+    </p>
 
-    <!-- PANEL KIRI -->
-    <section class="panel film-panel">
-        <h1>Pemesanan Tiket</h1>
-        <p class="desc">
-            Pilih film, tanggal, jam tayang, lalu klik kursi yang kamu mau.
-        </p>
-
-        <form class="form-pesan" onsubmit="return false">
-
-            <label>
-                Pilih Film
-                <select id="film">
-                    <option value="Now You See Me" data-price="50000">Now You See Me – Rp50.000</option>
-                    <option value="Ancika 1995" data-price="40000">Ancika 1995 – Rp40.000</option>
-                    <option value="Open BO: I Am Campus" data-price="55000">Open BO – Rp55.000</option>
-                    <option value="Ambatron & Rusdi" data-price="55000">Ambatron & Rusdi – Rp55.000</option>
-                    <option value="Midsommar" data-price="50000">Midsommar – Rp50.000</option>
-                    <option value="Interstellar" data-price="60000">Interstellar – Rp60.000</option>
-                </select>
-            </label>
-
-            <label>
-                Tanggal Nonton
-                <input type="date" id="tanggal" required>
-            </label>
-
-            <label>
-                Jam Tayang
-                <select id="jam">
-                    <option>16:30</option>
-                    <option>18:45</option>
-                    <option>19:00</option>
-                    <option>20:00</option>
-                    <option>20:30</option>
-                    <option>20:45</option>
-                    <option>21:20</option>
-                </select>
-            </label>
-
-        </form>
-
-        <div class="legend">
-            <div><span class="dot available"></span> Tersedia</div>
-            <div><span class="dot selected"></span> Dipilih</div>
-            <div><span class="dot occupied"></span> Terisi</div>
-        </div>
-    </section>
-
-    <!-- PANEL KURSI -->
-    <section class="panel seat-panel">
-        <h2>Pilih Kursi</h2>
-        <p class="screen-label">LAYAR</p>
-
-        <div class="seat-grid">
-            <!-- BARIS A -->
-            <button class="seat" data-seat="A1">A1</button>
-            <button class="seat" data-seat="A2">A2</button>
-            <button class="seat occupied" data-seat="A3">A3</button>
-            <button class="seat" data-seat="A4">A4</button>
-            <button class="seat" data-seat="A5">A5</button>
-            <button class="seat" data-seat="A6">A6</button>
-            <button class="seat" data-seat="A7">A7</button>
-            <button class="seat" data-seat="A8">A8</button>
-
-            <!-- BARIS B -->
-            <button class="seat" data-seat="B1">B1</button>
-            <button class="seat" data-seat="B2">B2</button>
-            <button class="seat" data-seat="B3">B3</button>
-            <button class="seat occupied" data-seat="B4">B4</button>
-            <button class="seat" data-seat="B5">B5</button>
-            <button class="seat" data-seat="B6">B6</button>
-            <button class="seat" data-seat="B7">B7</button>
-            <button class="seat" data-seat="B8">B8</button>
-
-            <!-- BARIS C -->
-            <button class="seat" data-seat="C1">C1</button>
-            <button class="seat" data-seat="C2">C2</button>
-            <button class="seat" data-seat="C3">C3</button>
-            <button class="seat" data-seat="C4">C4</button>
-            <button class="seat" data-seat="C5">C5</button>
-            <button class="seat occupied" data-seat="C6">C6</button>
-            <button class="seat" data-seat="C7">C7</button>
-            <button class="seat" data-seat="C8">C8</button>
-        </div>
-    </section>
-
-    <!-- PANEL TIKET -->
-    <section class="panel ticket-panel">
-        <h2>Tiket Online</h2>
-
-        <div class="eticket">
-            <div class="eticket-header">
-                <span class="brand">CineTick</span>
-                <span class="tag">E-Ticket</span>
+    <section class="grid-film">
+   <!-- FILM 1: NOW YOU SEE ME -->
+        <a href="now-you-see-me.html" class="card-film">
+            <div class="thumb" style="background-image: url('img/now-you-see-me.jpg');">
+                <div class="overlay">
+                    <h2>Now You See Me</h2>
+                    <p class="info">Mystery • 20:30</p>
+                    <p class="sinopsis">
+                        Aksi para pesulap kriminal kembali dengan trik mustahil yang bahkan FBI tidak bisa pecahkan.
+                    </p>
+                </div>
             </div>
+        </a>
 
-            <div class="eticket-body">
-                <p><span class="label">Film</span><span id="t-film">-</span></p>
-                <p><span class="label">Tanggal</span><span id="t-tanggal">-</span></p>
-                <p><span class="label">Jam</span><span id="t-jam">-</span></p>
-                <p><span class="label">Kursi</span><span id="t-kursi">Belum dipilih</span></p>
-                <p><span class="label">Jumlah</span><span id="t-jumlah">0</span></p>
-                <p><span class="label">Total</span><span id="t-total">Rp0</span></p>
+        <!-- FILM 2: ANCIKA -->
+        <a href="ancika.html" class="card-film">
+            <div class="thumb" style="background-image: url('img/ancika.jpg');">
+                <div class="overlay">
+                    <h2>Ancika 1995</h2>
+                    <p class="info">Romance • 19:00</p>
+                    <p class="sinopsis">
+                        Kisah cinta tentang kedewasaan, luka lama, dan pilihan yang sulit di tahun 1995.
+                    </p>
+                </div>
             </div>
+        </a>
 
-            <div class="barcode"></div>
-            <p class="note">Tunjukkan e-ticket ini di kasir.</p>
-        </div>
+        <!-- FILM 3: OPEN BO -->
+        <a href="open-bo.html" class="card-film">
+            <div class="thumb" style="background-image: url('img/open-bo.jpg');">
+                <div class="overlay">
+                    <h2>Open BO: I Am Campus</h2>
+                    <p class="info">Drama • 21:20 • 21+</p>
+                    <p class="sinopsis">
+                        Kehidupan kampus yang ceria ternyata menyimpan konflik moral dan realita yang pahit.
+                    </p>
+                </div>
+            </div>
+        </a>
 
-        <button class="btn-bayar">Lanjut ke Pembayaran</button>
+
+<!-- FILM 4: AMBATRON & RUSDI -->
+        <a href="ambatron.html" class="card-film">
+            <div class="thumb" style="background-image: url('img/ambatron.jpg');">
+                <div class="overlay">
+                    <h2>Ambatron & Rusdi</h2>
+                    <p class="info">Sci-Fi • 20:00</p>
+                    <p class="sinopsis">
+                        Duo penyelamat galaksi dengan armor tempur futuristik melawan ancaman alien terbesar abad ini.
+                    </p>
+                </div>
+            </div>
+        </a>
+
+        <!-- FILM 5: MIDSOMMAR -->
+        <a href="midsommar.html" class="card-film">
+            <div class="thumb" style="background-image: url('img/midsommar.jpg');">
+                <div class="overlay">
+                    <h2>Midsommar</h2>
+                    <p class="info">Horror • 18:45</p>
+                    <p class="sinopsis">
+                        Perayaan musim panas berubah menjadi ritual mengerikan ketika rahasia kelam sebuah desa terungkap.
+                    </p>
+                </div>
+            </div>
+        </a>
+
+<!-- FILM 6: INTERSTELLAR -->
+        <a href="interstellar.html" class="card-film">
+            <div class="thumb" style="background-image: url('img/interstellar.jpg');">
+                <div class="overlay">
+                    <h2>Interstellar</h2>
+                    <p class="info">Sci-Fi • 20:45</p>
+                    <p class="sinopsis">
+                        Seorang pilot NASA melakukan perjalanan menembus wormhole demi menyelamatkan masa depan umat manusia.
+                    </p>
+                </div>
+            </div>
+        </a>
     </section>
-
 </main>
-
-<!-- PAKAI JS EKSTERNAL SAJA -->
-<script src="js/detail-film.js"></script>
 
 </body>
 </html>
