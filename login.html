@@ -60,26 +60,23 @@
         </section>
     </main>
 
-    <script>
-        // JS simple buat bonus poin + biar form kerasa hidup
-        function handleLogin(e) {
-            e.preventDefault();
+<script>
+    // Login → splash animasi → index
+    function handleLogin(e) {
+        e.preventDefault();
 
-            const username = document.getElementById("username").value.trim();
-            const password = document.getElementById("password").value.trim();
-            const errorEl  = document.getElementById("error");
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const errorEl  = document.getElementById("error");
 
-            if (!username || !password) {
-                errorEl.textContent = "Username dan password wajib diisi dulu ya.";
-                return false;
-            }
-
-            // simulasi login sukses
-            errorEl.textContent = "";
-            // bisa diarahkan ke index.html
-            window.location.href = "index.html";
+        if (!username || !password) {
+            errorEl.textContent = "Username dan password wajib diisi dulu ya.";
             return false;
         }
-    </script>
-</body>
-</html>
+
+        // Login sukses → arahkan ke halaman animasi
+        errorEl.textContent = "";
+        window.location.href = "splash.html";
+        return false;
+    }
+</script>
