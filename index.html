@@ -2,7 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>CineTick • Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineTick • Beranda</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -10,40 +11,124 @@
 <header class="navbar">
     <div class="logo">CineTick</div>
     <nav>
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html" class="active">Beranda</a>
         <a href="daftar-film.html">Daftar Film</a>
+        <a href="jadwal.html">Jadwal</a>
         <a href="detail-film.html">Pesan Tiket</a>
-        <a href="evaluasi.html">Evaluasi</a>
         <a href="login.html" class="btn-login">Login</a>
     </nav>
 </header>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Nonton Jadi Lebih Mudah</h1>
-        <p>Pilih film favoritmu, pesan kursi terbaik, dan nikmati pengalaman menonton tanpa ribet.</p>
+<main class="page-home">
 
-        <div class="hero-btns">
-            <a href="daftar-film.html" class="btn-primary">Lihat Daftar Film</a>
-            <a href="detail-film.html" class="btn-secondary">Beli Tiket Sekarang</a>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <p class="badge">Tiket Bioskop • Online</p>
+            <h1>Nonton film<br>lebih gampang dari rebahan.</h1>
+            <p class="tagline">
+                Pilih film, cek jadwal, pilih kursi,  
+                dan kamu cuma perlu datang tepat waktu ke studio.
+            </p>
+
+            <div class="hero-actions">
+                <a href="daftar-film.html" class="btn primary">Lihat Daftar Film</a>
+                <a href="detail-film.html" class="btn ghost">Pesan Tiket Sekarang</a>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <h3>6+</h3>
+                    <span>Film tayang</span>
+                </div>
+                <div>
+                    <h3>3 Klik</h3>
+                    <span>Sampai pilih kursi</span>
+                </div>
+                <div>
+                    <h3>0</h3>
+                    <span>Antri di loket</span>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
 
-<section class="highlight">
-    <h2>Film Populer Minggu Ini</h2>
+        <div class="hero-right">
+            <div class="screen-mock">
+                <p class="screen-label">NOW SHOWING</p>
+                <div class="screen-poster poster-1">
+                    <div class="screen-overlay">
+                        <h2>Interstellar</h2>
+                        <p>Sci-Fi • 20.45 • Studio 2</p>
+                        <a href="interstellar.html">Detail Film</a>
+                    </div>
+                </div>
 
-    <div class="cards">
-        <a href="detail-film.html" class="card">interstellar</a>
-        <a href="detail-film.html" class="card">open bo</a>
-        <a href="detail-film.html" class="card">ancika</a>
-    </div>
-</section>
+                <div class="screen-row">
+                    <div class="mini-poster mini-1">
+                        <span>Ancika 1995</span>
+                    </div>
+                    <div class="mini-poster mini-2">
+                        <span>Now You See Me</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer class="footer">
-    <p>© 2025 CineTick. All rights reserved.</p>
-</footer>
+    <!-- SECTION NOW SHOWING -->
+    <section class="now-showing">
+        <div class="section-head">
+            <h2>Sedang Tayang</h2>
+            <a href="daftar-film.html" class="link-more">Lihat semua film →</a>
+        </div>
+
+        <div class="now-grid">
+            <a href="interstellar.html" class="ns-card">
+                <div class="ns-thumb" style="background-image: url('img/interstellar.jpg');"></div>
+                <div class="ns-info">
+                    <h3>Interstellar</h3>
+                    <p>Sci-Fi • 20.45 • Rp60.000</p>
+                </div>
+            </a>
+
+            <a href="ancika.html" class="ns-card">
+                <div class="ns-thumb" style="background-image: url('img/ancika.jpg');"></div>
+                <div class="ns-info">
+                    <h3>Ancika 1995</h3>
+                    <p>Romance • 19.00 • Rp40.000</p>
+                </div>
+            </a>
+
+            <a href="now-you-see-me.html" class="ns-card">
+                <div class="ns-thumb" style="background-image: url('img/now-you-see-me.jpg');"></div>
+                <div class="ns-info">
+                    <h3>Now You See Me</h3>
+                    <p>Mystery • 20.30 • Rp50.000</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- SECTION KENAPA -->
+    <section class="why">
+        <h2>Kenapa pakai CineTick?</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <h3>Tanpa antri</h3>
+                <p>Tinggal pilih kursi, bayar, dan tunjukkan e-ticket di pintu studio.</p>
+            </div>
+            <div class="why-card">
+                <h3>Jadwal jelas</h3>
+                <p>Lihat jam tayang, studio, dan harga tiket dalam satu halaman.</p>
+            </div>
+            <div class="why-card">
+                <h3>Ramah tugas</h3>
+                <p>Struktur HTML, CSS, dan JavaScript rapi buat bahan laporan kamu.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
 
 </body>
 </html>
-
