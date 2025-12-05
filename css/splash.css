@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1d2448 0, #050816 40%, #020617 100%);
+    color: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* WRAP */
+.splash-wrap {
+    text-align: center;
+    animation: fadeScreen 0.7s ease-out;
+}
+
+/* LOGO + RING */
+.logo-ring {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 999px;
+    border: 3px solid transparent;
+    border-top-color: #6366f1;
+    border-right-color: #8b5cf6;
+    box-shadow: 0 0 30px rgba(129,140,248,0.7);
+    animation: spinRing 1.8s cubic-bezier(.23,.74,.46,.99) infinite;
+}
+
+.logo-text {
+    position: relative;
+    font-size: 1.4rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    text-indent: .18em;
+    font-weight: 700;
+    text-shadow: 0 0 18px rgba(15,23,42,0.9);
+}
+
+/* HINT TEXT */
+.hint {
+    font-size: .9rem;
+    color: #cbd5f5;
+    opacity: .9;
+}
+
+/* ANIMASI */
+@keyframes spinRing {
+    0% {
+        transform: rotate(0deg) scale(0.9);
+        opacity: 0.4;
+    }
+    40% {
+        transform: rotate(140deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg) scale(0.96);
+        opacity: 0.9;
+    }
+}
+
+@keyframes fadeScreen {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
